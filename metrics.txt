@@ -1,0 +1,3 @@
+## Métricas del Modelo
+- MAE (Error absoluto medio): 98.45
+- RMSE (Raíz del error cuadrático medio): 103.20
