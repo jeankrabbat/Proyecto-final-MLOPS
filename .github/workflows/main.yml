@@ -16,15 +16,20 @@ jobs:
       repo_token: ${{ secrets.GITHUBTOKEN }}
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
 
       - name: Upgrade pip
-        run: sudo -H pip install --upgrade pip
+        run: pip install --upgrade pip
 
       - name: Install requirements
-        run: sudo -H pip3 install --no-cache-dir -r requirements.txt
+        run: pip install --no-cache-dir -r requirements.txt
 
       - name: Execute the training model
-        run: python3 retraining.py
+        run: python retraining.py
 
       - name: Generating report
         run: |
@@ -41,8 +46,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check the repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Login to dockerhub
         uses: docker/login-action@v2
