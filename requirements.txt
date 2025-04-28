@@ -1,5 +1,5 @@
 # Machine Learning / Forecasting
-autots==0.5.2
+autots==0.5.8
 
 # Básicos
 pandas==1.5.3
