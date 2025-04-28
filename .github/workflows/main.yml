@@ -16,11 +16,6 @@ jobs:
       repo_token: ${{ secrets.GITHUBTOKEN }}
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
 
       - name: Upgrade pip
         run: pip install --upgrade pip
@@ -29,7 +24,7 @@ jobs:
         run: pip install --no-cache-dir -r requirements.txt
 
       - name: Execute the training model
-        run: python retraining.py
+        run: python3 retraining.py
 
       - name: Generating report
         run: |
