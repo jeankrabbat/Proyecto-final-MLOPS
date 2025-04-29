@@ -72,17 +72,6 @@ if st.button("🔮 Predecir"):
     st.subheader("📋 Tabla de Predicciones")
     st.dataframe(forecast_df)
 
-    # Descargar predicción
-    output = io.BytesIO()
-    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-        forecast_df.to_excel(writer, index=True, sheet_name='Predicciones')
-    st.download_button(
-        label="⬇️ Descargar Predicciones en Excel",
-        data=output.getvalue(),
-        file_name='predicciones_pasajeros.xlsx',
-        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-    )
-
 # Footer
 st.markdown("---")
 st.caption("Desarrollado por Jean Carlo Rabbat y Jorge Chaves para nuestra clase de MLOps con el profesor Jorge Zapata 🚀")
