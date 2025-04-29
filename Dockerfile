@@ -14,6 +14,7 @@ WORKDIR /code
 COPY requirements.txt .
 
 RUN pip install --upgrade pip setuptools wheel
+RUN pip install --no-cache-dir numpy --upgrade  # Agregar esta línea para actualizar numpy
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
