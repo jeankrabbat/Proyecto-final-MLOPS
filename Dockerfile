@@ -24,7 +24,7 @@ COPY requirements.txt .
 RUN pip install --upgrade pip setuptools wheel
 
 # Instala numpy primero
-RUN pip install --no-cache-dir numpy==1.26.4
+RUN pip install --no-cache-dir numpy==1.24.4
 
 # Luego instala el resto
 RUN pip install --no-cache-dir -r requirements.txt
